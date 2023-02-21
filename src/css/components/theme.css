@@ -1,0 +1,136 @@
+body.themeDark {
+  background-color: var(--bg-color);
+  color: var(--third-color);
+}
+body.themeDark .home-header {
+  border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+}
+.theme-site {
+  display: none;
+}
+
+.theme__light {
+  margin: 0;
+  padding: 0;
+}
+.theme__dark {
+  margin: 0;
+  padding: 0;
+}
+.theme-label {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#sitetheme {
+  display: none;
+}
+#sitetheme + .theme-label,
+#sitetheme + .theme-label::after {
+  transition: all 0.3s;
+}
+#sitetheme + .theme-label {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+
+  background: var(--third-color);
+  border: 1px solid var(--theme-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#sitetheme + .theme-label::after {
+  border-radius: 50%;
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--theme-color);
+}
+
+#sitetheme:checked + .theme-label::after {
+  left: 54%;
+  background-color: var(--third-color);
+}
+
+#sitetheme:checked + .theme-label {
+  background: var(--theme-color);
+}
+.moon {
+  fill: var(--switcher-gray-moon);
+  stroke: var(--switcher-gray-moon);
+}
+
+.sun {
+  fill: var(--theme-color);
+  stroke: var(--theme-color);
+}
+
+body.themeDark #sitetheme + .theme-label {
+  background: var(--theme-color);
+  border: 1px solid var(--third-color);
+}
+body.themeDark .moon {
+  fill: var(--bg-color);
+  stroke: var(--switcher-gray-moon);
+}
+
+body.themeDark .sun {
+  fill: var(--switcher-accent-day);
+  stroke: var(--switcher-accent-day);
+}
+
+.theme__light {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.333;
+  color: var(--switcher-accent-day);
+}
+body.themeDark .theme__light {
+  color: var(--bg-color);
+  opacity: 0.4;
+}
+.theme__dark {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--switcher-gray-moon);
+}
+body.themeDark .theme__dark {
+  color: var(--switcher-gray-moon);
+}
+
+@media screen and (max-width: 1279px) {
+  .theme__dark,
+  .theme__light {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .sun,
+  .moon {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+}
